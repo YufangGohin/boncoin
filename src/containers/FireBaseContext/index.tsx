@@ -8,6 +8,7 @@ const FirebaseContext = React.createContext<FirebaseService | null>(
 export type FireBaseMessage = {
   content?: string;
   author: string;
+  isPrivate: boolean;
   createdAt: number;
 };
 

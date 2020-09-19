@@ -39,19 +39,27 @@ const IndexPage = () => {
     <span>loading</span>
   ) : (
     <>
-      <Fab color="secondary" onClick={() => history.push(routes.add())}>
-        <AddIcon />
-      </Fab>
       <Grid
         container
         direction="column"
         justify="center"
         alignItems="center"
-        spacing={8}
+        spacing={2}
       >
-        {messages.map(({ author, createdAt, content, uid }) => (
+        <Fab
+          style={{ position: "fixed", right: "3%", bottom: "5%", zIndex: 2 }}
+          color="secondary"
+          onClick={() => history.push(routes.add())}
+        >
+          <AddIcon />
+        </Fab>
+        {messages.map(({ author, isPrivate, createdAt, content, uid }) => (
           <Grid item xs={12} lg={12} sm={12} key={uid}>
-            <Message author={author} createdAt={createdAt}>
+            <Message
+              isPrivate={isPrivate}
+              author={author}
+              createdAt={createdAt}
+            >
               {content}
             </Message>
           </Grid>

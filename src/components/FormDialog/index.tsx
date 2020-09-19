@@ -41,6 +41,7 @@ export default function FormDialog({
     const body: any = {
       createdAt: Date.now(),
     };
+    debugger;
     Array.prototype.forEach.call(form.elements, (element: HTMLInputElement) => {
       element.name &&
         (body[element.name] =
@@ -71,7 +72,7 @@ export default function FormDialog({
             Entrez votre message et cliquez sur sauvegarder
           </DialogContentText>
           <FormControlLabel
-            control={<Switch name="private" />}
+            control={<Switch name="isPrivate" />}
             label="Message prive"
           />
           <TextField
